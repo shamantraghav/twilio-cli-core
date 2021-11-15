@@ -20,12 +20,14 @@ const triggerWorkflow = async () => {
     if (inputsJson) {
       inputs = JSON.parse(inputsJson);
     }
+    console.log("1: ", inputsJson);
+    console.log("2: ", inputsJson['change-log']);
     if(inputsJson['change-log'] === null){
       inputsJson['change-log'] == "No new OAI changes";
       console.log("3: ", inputsJson['change-log']);
     }
     console.log("4: ", inputs);
-    
+
     const workflow = await octokit.rest.actions.getWorkflow({
       owner,
       repo,
