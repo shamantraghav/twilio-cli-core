@@ -4,7 +4,12 @@
     {
       "name": "release-feature-branch",
       "prerelease": "rc"
+    },
+    {
+      "name": "rfb",
+      "prerelease": "rc"
     }
+    
   ],
   "plugins": [
     [
