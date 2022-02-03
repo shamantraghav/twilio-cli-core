@@ -1,4 +1,4 @@
-name: Cli-core Release
+name: Token Validation
 on:
   workflow_dispatch:
 jobs:
