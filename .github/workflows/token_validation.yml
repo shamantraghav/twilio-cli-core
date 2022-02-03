@@ -8,6 +8,6 @@ jobs:
       - name: Checkout a repo(OAI repo) to validate the token 
         uses: actions/checkout@v2
         with:
-          repository: 'twilio/twilio-oai'
+          repository: 'shamantraghav/twilio-oai'
           token:  ${{ secrets.REPO_ACCESS_TOKEN }}
 
