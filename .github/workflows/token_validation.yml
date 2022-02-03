@@ -1,0 +1,13 @@
+name: Cli-core Release
+on:
+  workflow_dispatch:
+jobs:
+  repo-access-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout a repo(OAI repo) to validate the token 
+        uses: actions/checkout@v2
+        with:
+          repository: 'twilio/twilio-oai'
+          token:  ${{ secrets.REPO_ACCESS_TOKEN }}
+
