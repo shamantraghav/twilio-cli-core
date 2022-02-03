@@ -8,6 +8,17 @@ jobs:
       - name: Checkout a repo(OAI repo) to validate the token 
         uses: actions/checkout@v2
         with:
-          repository: 'shamantraghav/twilio-oai'
+          repository: 'twilio/twilio-oai'
           token:  ${{ secrets.REPO_ACCESS_TOKEN }}
+  aws-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate AWS tokens
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: us-east-1
+  
 
