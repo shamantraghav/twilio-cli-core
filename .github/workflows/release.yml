@@ -21,6 +21,8 @@ jobs:
         with:
           repository: 'twilio/twilio-oai'
           token:  ${{ secrets.REPO_ACCESS_TOKEN }}
+        run: |
+          echo ::set-output name=exit_code::$?
       - name: Validate AWS tokens
         id: aws 
         uses: aws-actions/configure-aws-credentials@v1
@@ -145,7 +147,7 @@ jobs:
 #           INPUTS: '{ "change-log": ${{ toJSON(needs.update-api-specs.outputs.change-log) }}, "version-type": "${{needs.update-api-specs.outputs.version-type}}", "homebrew-branch": "${{github.event.inputs.homebrew-branch}}", "homebrew-prerelease": "${{github.event.inputs.homebrew-prerelease}}" }'
   notify-complete-fail:
     needs: [ token-validation, triggerCliWorkflow ]
-    if: jobs.token-validation.steps.repoaccess.outcome == 'success' 
+    if: steps.repoaccess.outputs.exit_code == 0
     name: Notify Release Failed
     runs-on: ubuntu-latest
     steps:
