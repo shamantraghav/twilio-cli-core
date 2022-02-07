@@ -34,8 +34,6 @@ jobs:
         env:
           TOKEN_FLAG: ${{ false }}
         run: echo "$TOKEN_FLAG"
-        if: env.TOKEN_FLAG == 'false'
-        run: echo "works"
 
 
   # notify-start:
