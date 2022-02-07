@@ -152,7 +152,7 @@ jobs:
 #           INPUTS: '{ "change-log": ${{ toJSON(needs.update-api-specs.outputs.change-log) }}, "version-type": "${{needs.update-api-specs.outputs.version-type}}", "homebrew-branch": "${{github.event.inputs.homebrew-branch}}", "homebrew-prerelease": "${{github.event.inputs.homebrew-prerelease}}" }'
   notify-complete-fail:
     needs: [ token-validation, triggerCliWorkflow ]
-    if: $TOKEN_FLAG
+    if: env.TOKEN_FLAG
     # if: ${{ failure() || cancelled() }}
     name: Notify Release Failed
     runs-on: ubuntu-latest
