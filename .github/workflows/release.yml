@@ -35,7 +35,7 @@ jobs:
           TOKEN_FLAG: ${{ false }}
         run: echo "$TOKEN_FLAG"
       - name: Check flag
-        if: env.TOKEN_FLAG == 'true'
+        if: env.TOKEN_FLAG == 'false'
         run: echo "works"
 
 
