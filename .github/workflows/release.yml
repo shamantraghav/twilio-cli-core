@@ -33,7 +33,7 @@ jobs:
         if: ${{ failure() }}
         env:
           TOKEN_FLAG: ${{ true }}
-        run: echo "$GITHUB_CONTEXT"
+        run: echo "$TOKEN_FLAG"
 
 
   # notify-start:
