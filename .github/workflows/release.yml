@@ -155,7 +155,7 @@ jobs:
   notify-complete-fail:
     needs: [ token-validation ]
     # if: ${{ failure() || cancelled() || needs.token-validation.outputs.token-flag }}
-    if: ${{ failure() || cancelled() || needs.token-validation.result != 'failure' }}
+    if: ${{ needs.token-validation.result != 'failure' && ( failure() || cancelled() ) }}
     name: Notify Release Failed
     runs-on: ubuntu-latest
     steps:
