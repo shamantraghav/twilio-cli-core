@@ -32,7 +32,7 @@ jobs:
       - name: Set flag for notifications
         if: ${{ failure() }}
         env:
-          TOKEN_FLAG: ${{ true }}
+          TOKEN_FLAG: ${{ false }}
         run: echo "$TOKEN_FLAG"
 
 
