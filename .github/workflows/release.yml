@@ -32,11 +32,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
-      - name: Set flag for notifications as false
-        id: tokenflag 
-        run: |
-          if: ${{ failure() }}
-          echo "::set-output name=token-flag::false"       
+      # - name: Set flag for notifications as false
+      #   id: tokenflag
+      #   if: ${{ failure() }} 
+      #   run: |
+      #     echo "::set-output name=token-flag::false"       
 
   # notify-start:
   #   needs: [ token-validation ]
@@ -154,7 +154,8 @@ jobs:
 #           INPUTS: '{ "change-log": ${{ toJSON(needs.update-api-specs.outputs.change-log) }}, "version-type": "${{needs.update-api-specs.outputs.version-type}}", "homebrew-branch": "${{github.event.inputs.homebrew-branch}}", "homebrew-prerelease": "${{github.event.inputs.homebrew-prerelease}}" }'
   notify-complete-fail:
     needs: [ token-validation ]
-    if: ${{ failure() || cancelled() || needs.token-validation.outputs.token-flag }}
+    # if: ${{ failure() || cancelled() || needs.token-validation.outputs.token-flag }}
+    if: ${{ failure() || cancelled() || needs.token-validation.result != 'failure' }}
     name: Notify Release Failed
     runs-on: ubuntu-latest
     steps:
