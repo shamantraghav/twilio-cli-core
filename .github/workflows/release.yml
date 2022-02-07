@@ -33,13 +33,11 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
       - name: Set flag for notifications as false
-        id: tokenflag
+        id: tokenflag 
         run: |
-          echo "::set-output name=token-flag::${{ job.status == 'failure' }}"
-          echo "needs.token-validation.outputs.token-flag"      
-        # run: |
-        #   if: ${{ failure() }}
-        #   echo "::set-output name=token-flag::false"       
+          echo "::set-output name=token-flag::true"
+          if: ${{ failure() }}
+          echo "::set-output name=token-flag::false"       
 
   # notify-start:
   #   needs: [ token-validation ]
@@ -155,20 +153,20 @@ jobs:
 #           BRANCH_NAME: ${{github.event.inputs.cli-branch}}
 #           REPO_NAME: twilio/twilio-cli
 #           INPUTS: '{ "change-log": ${{ toJSON(needs.update-api-specs.outputs.change-log) }}, "version-type": "${{needs.update-api-specs.outputs.version-type}}", "homebrew-branch": "${{github.event.inputs.homebrew-branch}}", "homebrew-prerelease": "${{github.event.inputs.homebrew-prerelease}}" }'
-  # notify-complete-fail:
-  #   needs: [ token-validation ]
-  #   if: ${{ needs.token-validation.outputs.token-flag || failure() || cancelled() }}
-  #   name: Notify Release Failed
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Slack Notification
-  #       uses: rtCamp/action-slack-notify@v2
-  #       env:
-  #         SLACK_WEBHOOK: ${{ secrets.ALERT_SLACK_WEB_HOOK }}
-  #         SLACK_COLOR: "#ff3333"
-  #         SLACK_USERNAME: CLI Release Bot
-  #         SLACK_ICON_EMOJI: ":ship:"
-  #         SLACK_TITLE: "Twilio Cli-core"
-  #         SLACK_MESSAGE: 'Release workflow Failed'
-  #         MSG_MINIMAL: actions url
+  notify-complete-fail:
+    needs: [ token-validation ]
+    if: ${{ needs.token-validation.outputs.token-flag || failure() || cancelled() }}
+    name: Notify Release Failed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.ALERT_SLACK_WEB_HOOK }}
+          SLACK_COLOR: "#ff3333"
+          SLACK_USERNAME: CLI Release Bot
+          SLACK_ICON_EMOJI: ":ship:"
+          SLACK_TITLE: "Twilio Cli-core"
+          SLACK_MESSAGE: 'Release workflow Failed'
+          MSG_MINIMAL: actions url
