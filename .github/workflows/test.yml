@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2.1.0
       - run: |
           output=$(python .github/scripts/release_mail_generator.py)
-          echo "::set-output name=changelog::$output"
-        id: step1
+          echo "::set-output name=tokenStatus::$output"
+        id: cli_token
       - name: Print changelog
-        run: echo "${{ steps.step1.outputs.changelog }}"
+        run: echo "${{ steps.cli_token.outputs.tokenStatus }}"
