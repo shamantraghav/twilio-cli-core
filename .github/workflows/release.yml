@@ -33,8 +33,9 @@ jobs:
       #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #     aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       #     aws-region: us-east-1
-      - name: Validate twilio-cli tokens
+      - name: Checkout cli-core repo
         uses: actions/checkout@v2
+      - name: Execute py script to validate twilio-cli tokens
         id: cli_token  
         run: |
           output=$(python3 .github/scripts/validate_cli_tokens.py)
