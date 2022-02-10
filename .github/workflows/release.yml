@@ -41,7 +41,7 @@ jobs:
         id: cli_token  
         run: |
           pip3 install requests
-          output=$(python3 .github/scripts/metrics/validate_cli_tokens.py)
+          output=$(python3 .github/scripts/validate_cli_tokens.py)
           echo "::set-output name=cli-token-status::$output"
       - name: Print status
         run: echo "${{ steps.cli_token.outputs.cli-token-status }}"
