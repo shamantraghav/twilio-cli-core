@@ -33,6 +33,8 @@ jobs:
       #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       #     aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       #     aws-region: us-east-1
+      - name: Checkout cli-core repo
+        uses: actions/checkout@v2
       - name: Setup python
         uses: actions/setup-python@v2
         with:
@@ -41,11 +43,10 @@ jobs:
         id: cli_token  
         run: |
           pip3 install requests
-          python3 $GITHUB_WORKSPACE/.github/scripts/validate_cli_tokens.py
-      #     output=$(python3 .github/scripts/validate_cli_tokens.py)
-      #     echo "::set-output name=cli-token-status::$output"
-      # - name: Print status
-      #   run: echo "${{ steps.cli_token.outputs.cli-token-status }}"
+          output=$(python3 .github/scripts/validate_cli_tokens.py)
+          echo "::set-output name=cli-token-status::$output"
+      - name: Print status
+        run: echo "${{ steps.cli_token.outputs.cli-token-status }}"
           
 #   notify-start:
 #     needs: [ token-validation ]
