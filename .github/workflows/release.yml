@@ -19,12 +19,12 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Some Workflow
-          repo: twilio/twilio-cli
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          repo: shamantraghav/twilio-cli
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Validate REPO_ACCESS_TOKEN in CLI core
         uses: actions/checkout@v2
         with:
-          repository: 'twilio/twilio-oai'
+          repository: 'shamantraghav/twilio-oai'
           token:  ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Validate AWS tokens in CLI core
         uses: aws-actions/configure-aws-credentials@v1
