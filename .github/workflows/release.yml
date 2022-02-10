@@ -18,7 +18,7 @@ jobs:
       - name: Validate Twilio CLI tokens
         uses: benc-uk/workflow-dispatch@v1
         with:
-          workflow: Some Workflow
+          workflow: Cli Release Token Validation
           repo: shamantraghav/twilio-cli
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Validate REPO_ACCESS_TOKEN in CLI core
