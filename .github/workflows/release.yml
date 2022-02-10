@@ -42,7 +42,7 @@ jobs:
       #     echo "::set-output name=tokenStatus::$output"
       # - name: Print status
       #   run: echo "${{ steps.cli_token.outputs.tokenStatus }}"
-  test:
+  cli-token-validation:
     needs: [ token-validation ]
     runs-on: ubuntu-latest
     steps:
