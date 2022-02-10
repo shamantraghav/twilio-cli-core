@@ -7,10 +7,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
-      - run: |
-          output=$(python .github/scripts/release_mail_generator.py)
+      - name: Checkout cli-core repo
+        uses: actions/checkout@v2
+      - name: Execute py script to validate twilio-cli tokens
+        id: cli_token  
+        run: |
+          output=$(python3 .github/scripts/validate_cli_tokens.py)
           echo "::set-output name=tokenStatus::$output"
-        id: cli_token
-      - name: Print changelog
+      - name: Print status
         run: echo "${{ steps.cli_token.outputs.tokenStatus }}"
