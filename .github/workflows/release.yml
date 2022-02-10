@@ -41,7 +41,7 @@ jobs:
         id: cli_token  
         run: |
           pip3 install requests
-          python3 ./scripts/validate_cli_tokens.py
+          python3 $GITHUB_WORKSPACE/.github/scripts/validate_cli_tokens.py
       #     output=$(python3 .github/scripts/validate_cli_tokens.py)
       #     echo "::set-output name=cli-token-status::$output"
       # - name: Print status
