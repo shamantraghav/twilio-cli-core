@@ -15,12 +15,12 @@ jobs:
   token-validation:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate Twilio CLI tokens
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: Cli Release Token Validation
-          repo: shamantraghav/twilio-cli
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+      # - name: Validate Twilio CLI tokens
+      #   uses: benc-uk/workflow-dispatch@v1
+      #   with:
+      #     workflow: Cli Release Token Validation
+      #     repo: shamantraghav/twilio-cli
+      #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Validate REPO_ACCESS_TOKEN in CLI core
         uses: actions/checkout@v2
         with:
