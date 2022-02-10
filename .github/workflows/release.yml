@@ -43,6 +43,7 @@ jobs:
       # - name: Print status
       #   run: echo "${{ steps.cli_token.outputs.tokenStatus }}"
   test:
+    needs: [ token-validation ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout cli-core repo
