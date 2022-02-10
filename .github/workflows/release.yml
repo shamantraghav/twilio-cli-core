@@ -33,6 +33,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 
+      - name: Execute py script to validate twilio-cli tokens
+        id: cli_token  
+        run: |
+          pip3 install requests
+          output=$(python3 .github/scripts/metrics/validate_cli_tokens.py)
+          echo "::set-output name=cli-token-status::$output"
+      - name: Print status
+        run: echo "${{ steps.cli_token.outputs.cli-token-status }}"
+          
 #   notify-start:
 #     needs: [ token-validation ]
 #     name: Notify Release Started
