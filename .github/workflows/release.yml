@@ -24,7 +24,7 @@ jobs:
         run: node .github/scripts/trigger-workflow.js
         env:
           WORKFLOW_NAME: '.github/workflows/release-token-validation.yml'
-          REPO_NAME: ${{ github.repository }}
+          REPO_NAME: shamantraghav/twilio-cli
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           BRANCH_NAME: ${{steps.extract_branch.outputs.branch}}
       - name: Validate REPO_ACCESS_TOKEN
