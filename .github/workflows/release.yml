@@ -24,7 +24,9 @@ jobs:
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       - name: Trigger CLI token validation workflow
-        run: node .github/scripts/trigger-workflow.js
+        run: |
+          fileName="$GITHUB_WORKSPACE/.github/scripts/trigger-workflow.js"
+          node -e "require('$fileName').triggerWorkflow()"
         env:
           WORKFLOW_NAME: '.github/workflows/release-token-validation.yml'
           REPO_NAME: ${{ github.repository_owner }}/twilio-cli
