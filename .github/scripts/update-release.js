@@ -10,11 +10,13 @@ const updateRelease = async () => {
     const octokit = github.getOctokit(process.env.REPO_ACCESS_TOKEN);
     const [owner, repo] = process.env.REPO_NAME ? process.env.REPO_NAME.split('/') : [null, null];
     const tag = process.env.TAG_NAME;
-    const getReleaseResponse = await octokit.repos.getReleaseByTag({
-      owner,
+    const getReleaseResponse = await octokit.release_for_tag({
+      // owner,
       repo,
       tag,
     });
+
+    console.log("getReleaseResponse:"+ getReleaseResponse);
 
     const {
       data: {
@@ -49,7 +51,7 @@ const updateRelease = async () => {
       prerelease = oldPrerelease;
     }
 
-    await octokit.repos.updateRelease({
+    await octokit.update_release({
       owner,
       release_id: oldReleaseId,
       repo,
@@ -65,6 +67,8 @@ const updateRelease = async () => {
   }
 };
 
+
+updateRelease();
 module.exports = {
   updateRelease,
 };
