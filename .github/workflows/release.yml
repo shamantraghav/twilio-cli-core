@@ -11,7 +11,7 @@ on:
       homebrew-prerelease:
         description: 'HomeBrew prerelease'
         default: 'false'
-# jobs:
+jobs:
 #   cli-core-token-validation:
 #     runs-on: ubuntu-latest
 #     steps:
