@@ -1,6 +1,7 @@
 {
   "branches": [
     "main",
+    "release-pipeline-testing",
     {
       "name": "release-feature-branch",
       "prerelease": "rc"
