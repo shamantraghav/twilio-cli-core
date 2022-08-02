@@ -8,17 +8,21 @@ const { Octokit } = require("@octokit/core");
  */
 const updateRelease = async () => {
   try {
+    console.log("test 1");
     const octokit = new Octokit({
       auth: process.env.REPO_ACCESS_TOKEN
     })
+    console.log("test 2");
     const [owner, repo] = process.env.REPO_NAME ? process.env.REPO_NAME.split('/') : [null, null];
+    console.log("test 3");
     const tag = process.env.TAG_NAME;
+    console.log("test 4");
     const getReleaseResponse = await octokit.request('GET /repos/{owner}/{repo}/releases/tags/{tag}',{
       owner,
       repo,
       tag,
     });
-
+    console.log("test 5");
     console.log("getReleaseResponse:"+ getReleaseResponse);
 
     const {
@@ -66,6 +70,7 @@ const updateRelease = async () => {
 
     core.info(`Updated release with body: ${body}`);
   } catch (error) {
+    console.log(error);
     core.setFailed(error.message);
   }
 };
