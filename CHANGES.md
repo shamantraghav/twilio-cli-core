@@ -1,3 +1,61 @@
+## [6.0.0](https://github.com/sr010/twilio-cli-core/compare/5.32.0...6.0.0) (2022-08-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* update description (#207)
+* add node engine support from 14.x+ (#204)
+* Storing profiles in config file instead of keytar.
+
+### Library - Features
+
+* Add flag no header for list and fetch commands ([#182](https://github.com/sr010/twilio-cli-core/issues/182)) ([22f6ea9](https://github.com/sr010/twilio-cli-core/commit/22f6ea9262e3874a2b9d46cb97e4df14648c0f78))
+* Release feature branch ([#188](https://github.com/sr010/twilio-cli-core/issues/188)) ([4380dac](https://github.com/sr010/twilio-cli-core/commit/4380dac7725511f10d0bc8b5d9925bafafc69253))
+
+
+### Library - Chores
+
+* **release:** set `package.json` to 6.7.0 [skip ci] ([9c8bcfb](https://github.com/sr010/twilio-cli-core/commit/9c8bcfbbee6ef298d03667c286068c56ef8b5cd1)), closes [#204](https://github.com/sr010/twilio-cli-core/issues/204) [#204](https://github.com/sr010/twilio-cli-core/issues/204) [#205](https://github.com/sr010/twilio-cli-core/issues/205)
+* add node engine support from 14.x+ ([#204](https://github.com/sr010/twilio-cli-core/issues/204)) ([7b81cb2](https://github.com/sr010/twilio-cli-core/commit/7b81cb2199e255197c144c43d4cd2ca952b5e06d))
+* update vulnerabilities dependencies ([#205](https://github.com/sr010/twilio-cli-core/issues/205)) ([105be81](https://github.com/sr010/twilio-cli-core/commit/105be81767ebbc13fc35db7cf076729cd9dee935))
+* **release:** set `package.json` to 5.32.1 [skip ci] ([bd27319](https://github.com/sr010/twilio-cli-core/commit/bd273193567137b8338cda15a5fc9439c49cd7d8)), closes [#170](https://github.com/sr010/twilio-cli-core/issues/170) [#174](https://github.com/sr010/twilio-cli-core/issues/174) [#179](https://github.com/sr010/twilio-cli-core/issues/179)
+* **release:** set `package.json` to 5.32.2 [skip ci] ([16ee681](https://github.com/sr010/twilio-cli-core/commit/16ee68126df2725383769bd69349cf45ece82b27)), closes [#180](https://github.com/sr010/twilio-cli-core/issues/180)
+* **release:** set `package.json` to 5.33.0 [skip ci] ([a49d861](https://github.com/sr010/twilio-cli-core/commit/a49d8618163a6116807f95ad387ede9cf2180d7b)), closes [#182](https://github.com/sr010/twilio-cli-core/issues/182) [#183](https://github.com/sr010/twilio-cli-core/issues/183) [#186](https://github.com/sr010/twilio-cli-core/issues/186) [#185](https://github.com/sr010/twilio-cli-core/issues/185) [#184](https://github.com/sr010/twilio-cli-core/issues/184) [#187](https://github.com/sr010/twilio-cli-core/issues/187)
+* **release:** set `package.json` to 6.0.0 [skip ci] ([03609c4](https://github.com/sr010/twilio-cli-core/commit/03609c4f282b3d52ef084b34152e6813def12e53)), closes [#189](https://github.com/sr010/twilio-cli-core/issues/189) [#188](https://github.com/sr010/twilio-cli-core/issues/188)
+* **release:** set `package.json` to 6.0.1 [skip ci] ([0a013aa](https://github.com/sr010/twilio-cli-core/commit/0a013aaf671f59f5ce52e132e61800fea418d045)), closes [#190](https://github.com/sr010/twilio-cli-core/issues/190)
+* **release:** set `package.json` to 6.1.0 [skip ci] ([c50937e](https://github.com/sr010/twilio-cli-core/commit/c50937ee114417a912a7ea8b2c3f0da55cb6fd40)), closes [#192](https://github.com/sr010/twilio-cli-core/issues/192) [#193](https://github.com/sr010/twilio-cli-core/issues/193) [#196](https://github.com/sr010/twilio-cli-core/issues/196)
+* **release:** set `package.json` to 6.2.0 [skip ci] ([51e610c](https://github.com/sr010/twilio-cli-core/commit/51e610c605005944c356895ba5b1156e8ce870d9))
+* **release:** set `package.json` to 6.2.1 [skip ci] ([1c8e512](https://github.com/sr010/twilio-cli-core/commit/1c8e5128b90d374b968252b5cc1614b16f2d0efb)), closes [#200](https://github.com/sr010/twilio-cli-core/issues/200)
+* **release:** set `package.json` to 6.3.0 [skip ci] ([2b62ecc](https://github.com/sr010/twilio-cli-core/commit/2b62eccb796a5226fbecde6a43b826499838fbcc))
+* **release:** set `package.json` to 6.3.1 [skip ci] ([1188739](https://github.com/sr010/twilio-cli-core/commit/1188739a45f21373185de8cce49875da3814ca10))
+* **release:** set `package.json` to 6.3.2 [skip ci] ([0d6059e](https://github.com/sr010/twilio-cli-core/commit/0d6059ed99007e64c9a3a6fd1bd2a6fef81b04e5))
+* **release:** set `package.json` to 6.4.0 [skip ci] ([7bcc7b6](https://github.com/sr010/twilio-cli-core/commit/7bcc7b6d4c4c4f6d099b65f1bdbd5f0583437166))
+* **release:** set `package.json` to 6.4.1 [skip ci] ([a3c924d](https://github.com/sr010/twilio-cli-core/commit/a3c924d37c11c8d98bc993826310f737ec5a596f))
+* **release:** set `package.json` to 6.4.2 [skip ci] ([57bcebf](https://github.com/sr010/twilio-cli-core/commit/57bcebf7fe19377c6df6ed6f09b9e3cc408a418f))
+* **release:** set `package.json` to 6.5.0 [skip ci] ([fa65211](https://github.com/sr010/twilio-cli-core/commit/fa652112f9924b9c42c6ea9a90d30aa2bbcf7aaa))
+* **release:** set `package.json` to 6.6.0 [skip ci] ([d2e851e](https://github.com/sr010/twilio-cli-core/commit/d2e851e5f8bb7da2805872413675628da778af2d))
+* Add node v12 support ([#200](https://github.com/sr010/twilio-cli-core/issues/200)) ([ef09c7c](https://github.com/sr010/twilio-cli-core/commit/ef09c7c866f5f399a3343df3cd0a3ec0cbcc28d2))
+* Add Npm Audit workflow ([#196](https://github.com/sr010/twilio-cli-core/issues/196)) ([5dd1887](https://github.com/sr010/twilio-cli-core/commit/5dd1887f03468c902691eac17546a02c59fefbcb))
+* bump dependency axios ([#190](https://github.com/sr010/twilio-cli-core/issues/190)) ([3836cbf](https://github.com/sr010/twilio-cli-core/commit/3836cbf5e14d12b134dceb6772b00c6db1a6109d))
+* github workflow update ([#183](https://github.com/sr010/twilio-cli-core/issues/183)) ([a96ebc3](https://github.com/sr010/twilio-cli-core/commit/a96ebc35249ce6dc8de424a5d98667a347a450f4))
+* Remove audit run with posttest script ([#186](https://github.com/sr010/twilio-cli-core/issues/186)) ([ea5c744](https://github.com/sr010/twilio-cli-core/commit/ea5c744b6dc00b9aeceb85b45ddee7856bd057fd))
+* remove outdated announcements ([960a478](https://github.com/sr010/twilio-cli-core/commit/960a478c9155e0f61b1e575f4aa0791162456800))
+* revert updated oclif major dependencies ([#185](https://github.com/sr010/twilio-cli-core/issues/185)) ([aa74e0e](https://github.com/sr010/twilio-cli-core/commit/aa74e0e8899fd244995ede6624baf65ccd973ebd))
+* Update LICENSE ([#189](https://github.com/sr010/twilio-cli-core/issues/189)) ([5b6a3a5](https://github.com/sr010/twilio-cli-core/commit/5b6a3a527251ef595cda317bae12b6de79bcc500))
+* update slack alerts color ([#179](https://github.com/sr010/twilio-cli-core/issues/179)) ([c96bbfb](https://github.com/sr010/twilio-cli-core/commit/c96bbfb2ddfc3ec636c92a69b1fedaf2f735fc4a))
+* update version of vulnerable dependencies ([#184](https://github.com/sr010/twilio-cli-core/issues/184)) ([b8de6f6](https://github.com/sr010/twilio-cli-core/commit/b8de6f611e53b232edbad1865e26e726f442478d))
+
+
+### Library - Fixes
+
+* Added changes to fix the lcov issue ([#170](https://github.com/sr010/twilio-cli-core/issues/170)) ([a3aaa7b](https://github.com/sr010/twilio-cli-core/commit/a3aaa7b1b02b18c586fe35a15a6fbafa3c92e4eb))
+* added support for default output prop in operation ([#192](https://github.com/sr010/twilio-cli-core/issues/192)) ([8ae4ba5](https://github.com/sr010/twilio-cli-core/commit/8ae4ba5a418521d5877c7fc753ed08cee2a43f22))
+* Cleaning travis code ([#193](https://github.com/sr010/twilio-cli-core/issues/193)) ([ecb2ae5](https://github.com/sr010/twilio-cli-core/commit/ecb2ae5e61774c4aca577517f5acf1932f192be8))
+* Modified flag description to eliminate new line indentation issue ([#174](https://github.com/sr010/twilio-cli-core/issues/174)) ([d8dd071](https://github.com/sr010/twilio-cli-core/commit/d8dd071345e0c5287504caddf807d449481c0baa))
+* update description ([#207](https://github.com/sr010/twilio-cli-core/issues/207)) ([80ae344](https://github.com/sr010/twilio-cli-core/commit/80ae3443ed5c0b40d3ba5ec73c47ccd9caf2376a))
+* Update semantic-release via npm bin ([#187](https://github.com/sr010/twilio-cli-core/issues/187)) ([b35a2ac](https://github.com/sr010/twilio-cli-core/commit/b35a2acbd6032f7cd71ecf01d7f18da190138d97))
+* update vulnerable dependencies packages ([#180](https://github.com/sr010/twilio-cli-core/issues/180)) ([0e5c492](https://github.com/sr010/twilio-cli-core/commit/0e5c492961991be0eb7d8f1a9113a3afacc7f316))
+
 ## [6.7.0](https://github.com/twilio/twilio-cli-core/compare/6.6.0...6.7.0) (2022-07-28)
 
 
